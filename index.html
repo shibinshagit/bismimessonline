@@ -29,6 +29,24 @@
     <!-- ===============================================-->
     <link href="assets/css/theme.css" rel="stylesheet" />
 
+    <style>
+      .suggestions {
+        border: 1px solid #ddd;
+        max-height: 150px;
+        overflow-y: auto;
+        position: absolute;
+        background-color: white;
+        z-index: 1;
+      }
+      .suggestions div {
+        padding: 8px;
+        cursor: pointer;
+      }
+      .suggestions div:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+
   </head>
 
 
@@ -38,17 +56,20 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" style="width: 50px; height:50px ;" src="assets/img/gallery/bismi.png" alt="logo" /><span class="text-700 fs-3 fw-bold ms-1 text-dark">kochi</span></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+          <button class="navbar-toggler" onclick="window.location.href='tel:+919995506030'" type="button" >
+            <i class="fas fa-phone"></i>
+          </button>
+          
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
               <p class="mb-0 fw-bold text-lg-center">Free Delivery : <i class="fas fa-map-marker-alt text-warning mx-2"></i><span class="fw-normal">in </span><span>Kochi</span></p>
             </div>
             <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-              <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
+              <!-- <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
                 <input class="form-control border-0 input-box bg-100" type="search" placeholder="Search Food" aria-label="Search" />
-              </div>
+              </div> -->
               <a href="tel:+919995506030" class="btn btn-white shadow-warning text-warning">
                 <i class="fas fa-phone me-2"></i>Connect
               </a>
@@ -77,16 +98,17 @@
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                       <form class="row gx-2 gy-2 align-items-center">
                         <div class="col">
-                          <div class="input-group-icon"><i class="fas fa-map-marker-alt text-danger input-box-icon"></i>
+                          <div class="input-group-icon">
+                            <i class="fas fa-map-marker-alt text-danger input-box-icon"></i>
                             <label class="visually-hidden" for="inputDelivery">Address</label>
-                            <input class="form-control input-box form-foodwagon-control" id="inputDelivery" type="text" placeholder="Enter Your Location" />
+                            <input class="form-control input-box form-foodwagon-control" id="inputDelivery" type="text" placeholder="Enter Your Location" oninput="showSuggestions(this.value)" />
+                            <div id="suggestions" class="suggestions"></div>
                           </div>
                         </div>
                         <div class="d-grid gap-3 col-sm-auto">
-                          <a href="https://wa.me/919995506030" class="btn btn-danger">
+                          <a id="whatsappLink" class="btn btn-danger" onclick="redirectToWhatsApp()">
                             Check
                           </a>
-                          
                         </div>
                       </form>
                     </div>
@@ -139,7 +161,7 @@
             </div>
             <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
               <div class="card card-span h-100">
-                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/bg2.jpg" alt="..." />
+                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/bg3.jpg" alt="..." />
                   <div class="card-actions">
                     <div class="badge badge-foodwagon bg-primary p-4">
                       <div class="d-flex flex-between-center">
@@ -158,7 +180,7 @@
             </div>
             <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
               <div class="card card-span h-100">
-                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/bg2.jpg" alt="..." />
+                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/bg1.jpg" alt="..." />
                   <div class="card-actions">
                     <div class="badge badge-foodwagon bg-primary p-4">
                       <div class="d-flex flex-between-center">
@@ -177,7 +199,7 @@
             </div>
             <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
               <div class="card card-span h-100">
-                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/bg2.jpg" alt="..." />
+                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/bg5.jpg" alt="..." />
                   <div class="card-actions">
                     <div class="badge badge-foodwagon bg-primary p-4">
                       <div class="d-flex flex-between-center">
@@ -303,7 +325,7 @@
             <div class="col-lg-5 d-none d-lg-block" style="margin-bottom: -122px;"> <img class="w-100" src="assets/img/gallery/phone-cta-one.png" alt="..." /></div>
             <div class="col-lg-5 mt-7 mt-md-0">
               <h1 class="text-primary">Install the app</h1>
-              <p>It's never been easier to order food. Look for the finest <br class="d-none d-xl-block" />discounts and you'll be lost in a world of delectable food.</p><a class="pe-2" href="https://www.apple.com/app-store/" target="_blank"><img src="assets/img/gallery/app-store.svg" width="160" alt="" /></a><a href="https://play.google.com/store/apps" target="_blank"><img src="assets/img/gallery/google-play.svg" width="160" alt="" /></a>
+              <p>Launching soon<br class="d-none d-xl-block" />Ready to get our offers?</p><a class="pe-2" href="https://www.apple.com/app-store/" target="_blank"><img src="assets/img/gallery/app-store.svg" width="160" alt="" /></a><a href="https://play.google.com/store/apps" target="_blank"><img src="assets/img/gallery/google-play.svg" width="160" alt="" /></a>
             </div>
           </div>
         </div>
@@ -323,7 +345,7 @@
                     <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-0 order-md-1"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0" src="assets/img/gallery/bg2.jpg" alt="..." /></div>
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
                       <h1 class="card-title mt-xl-5 mb-4">We Care for Your <span class="text-primary"> Nutrition</span></h1>
-                      <p class="fs-1">Enjoy the large size of sandwiches. Complete your meal with the perfect slice of sandwiches.</p>
+                      <p class="fs-1">Our goal is to blend professional quality with a homely touch, ensuring you enjoy delicious, comforting meals that support your well-being.</p>
                       <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
@@ -353,7 +375,7 @@
                     <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-md-0"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-start rounded-md-top-0" src="assets/img/gallery/hero-header.png" alt="..." /></div>
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
                       <h1 class="card-title mt-xl-5 mb-4">We Care About Your <span class="text-primary">Time</span></h1>
-                      <p class="fs-1">Get the best fried chicken smeared with a lip smacking lemon chili flavor. Check out best deals for fried chicken.</p>
+                      <p class="fs-1">we understand the value of your time. Our efficient service and easy delivering process are designed to save your time.</p>
                       <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
@@ -380,10 +402,10 @@
               <div class="card card-span mb-3 shadow-lg">
                 <div class="card-body py-0">
                   <div class="row justify-content-center">
-                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-0 order-md-1"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0" src="assets/img/gallery/bg2.jpg" alt="..." /></div>
+                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-0 order-md-1"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0" src="assets/img/gallery/bg3.jpg" alt="..." /></div>
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
                       <h1 class="card-title mt-xl-5 mb-4">We Care About Your <span class="text-primary"> Taste</span></h1>
-                      <p class="fs-1">Pair up with a friend and enjoy the hot and crispy pizza pops. Try it with the best deals.</p>
+                      <p class="fs-1">we cook with your taste buds in mind, delivering meals that not only satisfy but also resonate with your palate.</p>
                       <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
@@ -406,7 +428,7 @@
         <div class="container">
           <div class="row flex-center">
             <div class="col-xxl-9 py-7 text-center">
-              <h1 class="fw-bold mb-4 text-white fs-6">Are you ready to order <br />with the best deals? </h1><a class="btn btn-danger" href="#"> PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a>
+              <h1 class="fw-bold mb-4 text-white fs-6">It's your right to enjoy <br />good food!</h1><a class="btn btn-danger" href="#"> PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a>
             </div>
           </div>
         </div>
@@ -514,7 +536,182 @@
     <!--    End of Main Content-->
     <!-- ===============================================-->
 
+    <script>
+      const locations = [
+    "Fort Kochi",
+    "Marine Drive",
+    "Mattancherry",
+    "Lulu Mall",
+    "Jew Town",
+    "Hill Palace Museum",
+    "Cherai Beach",
+    "Bolgatty Palace",
+    "Mangalavanam Bird Sanctuary",
+    "Santa Cruz Basilica",
+    "St. Francis Church",
+    "Chinese Fishing Nets",
+    "Indo-Portuguese Museum",
+    "Veeranpuzha Beach",
+    "Paradesi Synagogue",
+    "Museum of Kerala History",
+    "Kochi International Marina",
+    "Willingdon Island",
+    "Vypin Island",
+    "Pallipuram Fort",
+    "Kerala Folklore Museum",
+    "Munambam Beach",
+    "Madhavan Nayar Foundation",
+    "Ernakulam Shiva Temple",
+    "Wonderla Amusement Park",
+    "Kalady",
+    "Kodungallur Bhagavathy Temple",
+    "Chottanikkara Temple",
+    "St. George's Forane Church",
+    "Athirappilly Waterfalls",
+    "Thiruvairanikulam Temple",
+    "Paniyeli Poru",
+    "Bhoothathankettu",
+    "Kodanad Elephant Training Centre",
+    "Cheraman Juma Masjid",
+    "Malayattoor Church",
+    "Aluva Palace",
+    "Periyar River",
+    "Thrikkakara Temple",
+    "St. Mary's Cathedral Basilica",
+    "Puthuvype Beach",
+    "Vallarpadam Church",
+    "Mattancherry Palace",
+    "Ernakulam Broadway",
+    "Durbar Hall Art Gallery",
+    "Jawaharlal Nehru Stadium",
+    "Kumbalangi Integrated Tourism Village",
+    "Cochin Shipyard",
+    "Cochin Spice Market",
+    "Cochin University of Science and Technology",
+    "MG Road",
+    "Jewish Cemetery",
+    "Bolgatty Event Centre",
+    "CSML (Cochin Smart Mission Limited)",
+    "St. Teresa's College",
+    "Kochi Biennale Foundation",
+    "Bastion Bungalow",
+    "Pierce Leslie Bungalow",
+    "Old Harbour House",
+    "David Hall",
+    "Kashi Art Cafe",
+    "Cafe Mattancherry",
+    "Ginger House Museum Hotel",
+    "Kochi Castle",
+    "Kochi International Airport",
+    "Puthuvype Lighthouse",
+    "Marine Drive Boat Jetty",
+    "Vasco da Gama Square",
+    "Rameshwaram Temple",
+    "Thamaramkulangara Sree Dharma Sastha Temple",
+    "Vallarpadam Terminal",
+    "Sree Poornathrayeesa Temple",
+    "Puthencruz Market",
+    "Subhash Park",
+    "Sacred Heart Basilica",
+    "Thirumala Devaswom Temple",
+    "Shiva Temple Ernakulam",
+    "Gurudwara Sri Guru Singh Sabha",
+    "Ramakrishna Math",
+    "Kadavum Bagam Synagogue",
+    "Hill Palace Tripunithura",
+    "Andhakaranazhi Beach",
+    "Neelimala Viewpoint",
+    "Peechi-Vazhani Wildlife Sanctuary",
+    "Thattekad Bird Sanctuary",
+    "Edappally Church Complex",
+    "Mangaladevi Temple",
+    "Kanjiramattom Mosque",
+    "Thriprayar Temple",
+    "Ernakulam Town Hall",
+    "Regional Science Centre and Planetarium",
+    "Kochi Naval Base",
+    "Vanchikulam Lake",
+    "Palluruthy Beach",
+    "St. Joseph's Church",
+    "Queen's Walkway",
+    "Changampuzha Park",
+    "Indian Naval Maritime Museum",
+    "Jawaharlal Nehru International Stadium",
+    "National Shrine of St. Jude Thaddeus",
+    "Oberon Mall",
+    "Central Square Mall",
+    "Bay Pride Mall",
+    "Gold Souk Grande Mall",
+    "Kundannoor",
+    "Maradu",
+    "Vytilla",
+    "Aluva Metro Station",
+    "Pulinchodu Metro Station",
+    "Companypady Metro Station",
+    "Ambattukavu Metro Station",
+    "Muttom Metro Station",
+    "Kalamassery Metro Station",
+    "Cochin University Metro Station",
+    "Pathadipalam Metro Station",
+    "Edapally Metro Station",
+    "Changampuzha Park Metro Station",
+    "Palarivattom Metro Station",
+    "Jawaharlal Nehru Stadium Metro Station",
+    "Kaloor Metro Station",
+    "Lissie Metro Station",
+    "MG Road Metro Station",
+    "Maharaja's College Metro Station",
+    "Ernakulam South Metro Station",
+    "Kadavanthra Metro Station",
+    "Elamkulam Metro Station",
+    "Vyttila Metro Station",
+    "Thaikoodam Metro Station",
+    "Pettah Metro Station",
+    "SN Junction Metro Station",
+    "Tripunithura Metro Station"
+];
+      
+      function showSuggestions(value) {
+        const suggestions = document.getElementById('suggestions');
+        suggestions.innerHTML = '';
+        if (value.length === 0) {
+          suggestions.style.display = 'none';
+          return;
+        }
+        
+        const filteredLocations = locations.filter(location => location.toLowerCase().includes(value.toLowerCase()));
+        if (filteredLocations.length > 0) {
+          filteredLocations.forEach(location => {
+            const div = document.createElement('div');
+            div.innerHTML = location;
+            div.onclick = () => selectSuggestion(location);
+            suggestions.appendChild(div);
+          });
+          suggestions.style.display = 'block';
+        } else {
+          suggestions.style.display = 'none';
+        }
+      }
+      
+      function selectSuggestion(location) {
+        document.getElementById('inputDelivery').value = location;
+        document.getElementById('suggestions').style.display = 'none';
+      }
+      
+      function redirectToWhatsApp() {
+        var inputValue = encodeURIComponent(document.getElementById("inputDelivery").value);
 
+    var countryCode = "+91"; 
+    var phoneNumber = "9995506030"; 
+
+    var url = "https://api.whatsapp.com/send?phone=" + countryCode + phoneNumber + "&text=";
+
+    var messageBody = "Hello Bismimess, i want you to know your availability in the location : " + inputValue + "!";
+
+    url += messageBody;
+    window.location.href = url;
+      }
+    </script>
 
 
     <!-- ===============================================-->
