@@ -10,22 +10,188 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 // ad onn
 
 
-  function sendWhatsAppMessage() {
-    // Get the input value (location)
-    var location = document.getElementById('inputDelivery').value;
+// Preloader script
+window.addEventListener('load', function() {
+  document.getElementById('preloader').style.display = 'none';
+});
+
+
+
+
+  const locations = [
+"Fort Kochi",
+"Marine Drive",
+"Mattancherry",
+"Lulu Mall",
+"Jew Town",
+"Hill Palace Museum",
+"Cherai Beach",
+"Bolgatty Palace",
+"Mangalavanam Bird Sanctuary",
+"Santa Cruz Basilica",
+"St. Francis Church",
+"Chinese Fishing Nets",
+"Indo-Portuguese Museum",
+"Veeranpuzha Beach",
+"Paradesi Synagogue",
+"Museum of Kerala History",
+"Kochi International Marina",
+"Willingdon Island",
+"Vypin Island",
+"Pallipuram Fort",
+"Kerala Folklore Museum",
+"Munambam Beach",
+"Madhavan Nayar Foundation",
+"Ernakulam Shiva Temple",
+"Wonderla Amusement Park",
+"Kalady",
+"Kodungallur Bhagavathy Temple",
+"Chottanikkara Temple",
+"St. George's Forane Church",
+"Athirappilly Waterfalls",
+"Thiruvairanikulam Temple",
+"Paniyeli Poru",
+"Bhoothathankettu",
+"Kodanad Elephant Training Centre",
+"Cheraman Juma Masjid",
+"Malayattoor Church",
+"Aluva Palace",
+"Periyar River",
+"Thrikkakara Temple",
+"St. Mary's Cathedral Basilica",
+"Puthuvype Beach",
+"Vallarpadam Church",
+"Mattancherry Palace",
+"Ernakulam Broadway",
+"Durbar Hall Art Gallery",
+"Jawaharlal Nehru Stadium",
+"Kumbalangi Integrated Tourism Village",
+"Cochin Shipyard",
+"Cochin Spice Market",
+"Cochin University of Science and Technology",
+"MG Road",
+"Jewish Cemetery",
+"Bolgatty Event Centre",
+"CSML (Cochin Smart Mission Limited)",
+"St. Teresa's College",
+"Kochi Biennale Foundation",
+"Bastion Bungalow",
+"Pierce Leslie Bungalow",
+"Old Harbour House",
+"David Hall",
+"Kashi Art Cafe",
+"Cafe Mattancherry",
+"Ginger House Museum Hotel",
+"Kochi Castle",
+"Kochi International Airport",
+"Puthuvype Lighthouse",
+"Marine Drive Boat Jetty",
+"Vasco da Gama Square",
+"Rameshwaram Temple",
+"Thamaramkulangara Sree Dharma Sastha Temple",
+"Vallarpadam Terminal",
+"Sree Poornathrayeesa Temple",
+"Puthencruz Market",
+"Subhash Park",
+"Sacred Heart Basilica",
+"Thirumala Devaswom Temple",
+"Shiva Temple Ernakulam",
+"Gurudwara Sri Guru Singh Sabha",
+"Ramakrishna Math",
+"Kadavum Bagam Synagogue",
+"Hill Palace Tripunithura",
+"Andhakaranazhi Beach",
+"Neelimala Viewpoint",
+"Peechi-Vazhani Wildlife Sanctuary",
+"Thattekad Bird Sanctuary",
+"Edappally Church Complex",
+"Mangaladevi Temple",
+"Kanjiramattom Mosque",
+"Thriprayar Temple",
+"Ernakulam Town Hall",
+"Regional Science Centre and Planetarium",
+"Kochi Naval Base",
+"Vanchikulam Lake",
+"Palluruthy Beach",
+"St. Joseph's Church",
+"Queen's Walkway",
+"Changampuzha Park",
+"Indian Naval Maritime Museum",
+"Jawaharlal Nehru International Stadium",
+"National Shrine of St. Jude Thaddeus",
+"Oberon Mall",
+"Central Square Mall",
+"Bay Pride Mall",
+"Gold Souk Grande Mall",
+"Kundannoor",
+"Maradu",
+"Vytilla",
+"Aluva Metro Station",
+"Pulinchodu Metro Station",
+"Companypady Metro Station",
+"Ambattukavu Metro Station",
+"Muttom Metro Station",
+"Kalamassery Metro Station",
+"Cochin University Metro Station",
+"Pathadipalam Metro Station",
+"Edapally Metro Station",
+"Changampuzha Park Metro Station",
+"Palarivattom Metro Station",
+"Jawaharlal Nehru Stadium Metro Station",
+"Kaloor Metro Station",
+"Lissie Metro Station",
+"MG Road Metro Station",
+"Maharaja's College Metro Station",
+"Ernakulam South Metro Station",
+"Kadavanthra Metro Station",
+"Elamkulam Metro Station",
+"Vyttila Metro Station",
+"Thaikoodam Metro Station",
+"Pettah Metro Station",
+"SN Junction Metro Station",
+"Tripunithura Metro Station"
+];
+  
+  function showSuggestions(value) {
+    const suggestions = document.getElementById('suggestions');
+    suggestions.innerHTML = '';
+    if (value.length === 0) {
+      suggestions.style.display = 'none';
+      return;
+    }
     
-    // Format the WhatsApp URL with the number and location
-    var phoneNumber = '919995506030'; // Replace with your WhatsApp number
-    var message = encodeURIComponent('Location: ' + location); // Include location in message
-    
-    // Construct the WhatsApp link
-    var whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + message;
-    
-    // Open the WhatsApp chat link
-    window.open(whatsappLink, '_blank');
+    const filteredLocations = locations.filter(location => location.toLowerCase().includes(value.toLowerCase()));
+    if (filteredLocations.length > 0) {
+      filteredLocations.forEach(location => {
+        const div = document.createElement('div');
+        div.innerHTML = location;
+        div.onclick = () => selectSuggestion(location);
+        suggestions.appendChild(div);
+      });
+      suggestions.style.display = 'block';
+    } else {
+      suggestions.style.display = 'none';
+    }
   }
+  
+  function selectSuggestion(location) {
+    document.getElementById('inputDelivery').value = location;
+    document.getElementById('suggestions').style.display = 'none';
+  }
+  
+  function redirectToWhatsApp() {
+    var inputValue = encodeURIComponent(document.getElementById("inputDelivery").value);
 
+var countryCode = "+91"; 
+var phoneNumber = "9995506030"; 
 
+var url = "https://api.whatsapp.com/send?phone=" + countryCode + phoneNumber + "&text=";
+
+var messageBody = "Hello Bismimess, i want you to know your availability in the location : " + inputValue;
+
+url += messageBody;
+window.location.href = url;
+  }
 
 
 

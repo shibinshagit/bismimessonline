@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>online mess kochi</title>
+    <title>Bismimess Kochi</title>
 
     <!-- ===============================================-->
     <!--    Favicons-->
@@ -20,6 +20,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/gallery/bismi.png">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/gallery/bismi.png">
     <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
 
@@ -30,27 +32,19 @@
     <link href="assets/css/theme.css" rel="stylesheet" />
 
     <style>
-      .suggestions {
-        border: 1px solid #ddd;
-        max-height: 150px;
-        overflow-y: auto;
-        position: absolute;
-        background-color: white;
-        z-index: 1;
-      }
-      .suggestions div {
-        padding: 8px;
-        cursor: pointer;
-      }
-      .suggestions div:hover {
-        background-color: #f0f0f0;
-      }
     </style>
 
   </head>
 
 
   <body>
+
+ <!-- Preloader -->
+ <div id="preloader">
+  <div class="loader">
+  </div>
+</div>
+
 
     <!-- ===============================================-->
     <!--    Main Content-->
@@ -107,7 +101,7 @@
                         </div>
                         <div class="d-grid gap-3 col-sm-auto">
                           <a id="whatsappLink" class="btn btn-danger" onclick="redirectToWhatsApp()">
-                            Check
+                            Chat now
                           </a>
                         </div>
                       </form>
@@ -155,7 +149,7 @@
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">3 Time Food Monthly</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">6 days Remaining</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">3 Time Food Monthly</h5><span class="badge bg-soft-success py-2 px-3"><span class="fs-1 text-success">Free Delivery</span></span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
@@ -174,7 +168,7 @@
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">2 Time Food Monthly</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">6 days Remaining</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">2 Time Food Monthly</h5><span class="badge bg-soft-success py-2 px-3"><span class="fs-1 text-success">Free Delivery</span></span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
@@ -193,17 +187,17 @@
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">1 Time Food Monthly</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">6 days Remaining</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">1 Time Food Monthly</h5><span class="badge bg-soft-success py-2 px-3"><span class="fs-1 text-success">Free Delivery</span></span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
+            <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4" onclick="redirectToWhatsApp()">
               <div class="card card-span h-100">
                 <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/bg5.jpg" alt="..." />
                   <div class="card-actions">
-                    <div class="badge badge-foodwagon bg-primary p-4">
+                    <div class="badge badge-foodwagon bg-success p-4">
                       <div class="d-flex flex-between-center">
-                        <i class="fas fa-comment me-1"></i>
+                        <i class="fab fa-whatsapp me-1 fa-2x"></i>
                         <div class="text-white fs-7"></div>
                         <div class="d-block text-white fs-2"> <br />
                           <div class="fw-normal fs-1 mt-2"></div>
@@ -213,7 +207,7 @@
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">Customise your plan</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">6 days Remaining</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">Customise your plan</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">share what you want!</span></span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
@@ -346,7 +340,7 @@
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
                       <h1 class="card-title mt-xl-5 mb-4">We Care for Your <span class="text-primary"> Nutrition</span></h1>
                       <p class="fs-1">Our goal is to blend professional quality with a homely touch, ensuring you enjoy delicious, comforting meals that support your well-being.</p>
-                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
+                      <div onclick="redirectToWhatsApp()" class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
                 </div>
@@ -376,7 +370,7 @@
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
                       <h1 class="card-title mt-xl-5 mb-4">We Care About Your <span class="text-primary">Time</span></h1>
                       <p class="fs-1">we understand the value of your time. Our efficient service and easy delivering process are designed to save your time.</p>
-                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
+                      <div onclick="redirectToWhatsApp()" class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
                 </div>
@@ -406,7 +400,7 @@
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
                       <h1 class="card-title mt-xl-5 mb-4">We Care About Your <span class="text-primary"> Taste</span></h1>
                       <p class="fs-1">we cook with your taste buds in mind, delivering meals that not only satisfy but also resonate with your palate.</p>
-                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
+                      <div onclick="redirectToWhatsApp()" class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
                 </div>
@@ -428,7 +422,7 @@
         <div class="container">
           <div class="row flex-center">
             <div class="col-xxl-9 py-7 text-center">
-              <h1 class="fw-bold mb-4 text-white fs-6">It's your right to enjoy <br />good food!</h1><a class="btn btn-danger" href="#"> PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a>
+              <h1 class="fw-bold mb-4 text-white fs-6">We Value Your Feedback! <br /></h1> <a class="btn btn-success" href="mailto:credcareindia@gmail.com">MAIL US</a>
             </div>
           </div>
         </div>
@@ -500,17 +494,8 @@
         
             <div class="col-12 col-md-8 col-lg-6 col-xxl-4">
               <h5 class="lh-lg fw-bold text-500">FOLLOW US</h5>
-              <div class="text-start my-3"> <a href="#!">
-                  <svg class="svg-inline--fa fa-instagram fa-w-14 fs-2 me-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path fill="#BDBDBD" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                  </svg></a><a href="#!">
-                  <svg class="svg-inline--fa fa-facebook fa-w-16 fs-2 mx-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="#BDBDBD" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
-                  </svg></a><a href="#!">
-                  <svg class="svg-inline--fa fa-twitter fa-w-16 fs-2 mx-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="#BDBDBD" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
-                  </svg></a></div>
-             
+              <i class="fab fa-instagram fa-2x"></i> 
+              <i class="fab fa-whatsapp fa-2x mx-2"></i> 
             </div>
           </div>
           <hr class="border border-800" />
@@ -536,184 +521,7 @@
     <!--    End of Main Content-->
     <!-- ===============================================-->
 
-    <script>
-      const locations = [
-    "Fort Kochi",
-    "Marine Drive",
-    "Mattancherry",
-    "Lulu Mall",
-    "Jew Town",
-    "Hill Palace Museum",
-    "Cherai Beach",
-    "Bolgatty Palace",
-    "Mangalavanam Bird Sanctuary",
-    "Santa Cruz Basilica",
-    "St. Francis Church",
-    "Chinese Fishing Nets",
-    "Indo-Portuguese Museum",
-    "Veeranpuzha Beach",
-    "Paradesi Synagogue",
-    "Museum of Kerala History",
-    "Kochi International Marina",
-    "Willingdon Island",
-    "Vypin Island",
-    "Pallipuram Fort",
-    "Kerala Folklore Museum",
-    "Munambam Beach",
-    "Madhavan Nayar Foundation",
-    "Ernakulam Shiva Temple",
-    "Wonderla Amusement Park",
-    "Kalady",
-    "Kodungallur Bhagavathy Temple",
-    "Chottanikkara Temple",
-    "St. George's Forane Church",
-    "Athirappilly Waterfalls",
-    "Thiruvairanikulam Temple",
-    "Paniyeli Poru",
-    "Bhoothathankettu",
-    "Kodanad Elephant Training Centre",
-    "Cheraman Juma Masjid",
-    "Malayattoor Church",
-    "Aluva Palace",
-    "Periyar River",
-    "Thrikkakara Temple",
-    "St. Mary's Cathedral Basilica",
-    "Puthuvype Beach",
-    "Vallarpadam Church",
-    "Mattancherry Palace",
-    "Ernakulam Broadway",
-    "Durbar Hall Art Gallery",
-    "Jawaharlal Nehru Stadium",
-    "Kumbalangi Integrated Tourism Village",
-    "Cochin Shipyard",
-    "Cochin Spice Market",
-    "Cochin University of Science and Technology",
-    "MG Road",
-    "Jewish Cemetery",
-    "Bolgatty Event Centre",
-    "CSML (Cochin Smart Mission Limited)",
-    "St. Teresa's College",
-    "Kochi Biennale Foundation",
-    "Bastion Bungalow",
-    "Pierce Leslie Bungalow",
-    "Old Harbour House",
-    "David Hall",
-    "Kashi Art Cafe",
-    "Cafe Mattancherry",
-    "Ginger House Museum Hotel",
-    "Kochi Castle",
-    "Kochi International Airport",
-    "Puthuvype Lighthouse",
-    "Marine Drive Boat Jetty",
-    "Vasco da Gama Square",
-    "Rameshwaram Temple",
-    "Thamaramkulangara Sree Dharma Sastha Temple",
-    "Vallarpadam Terminal",
-    "Sree Poornathrayeesa Temple",
-    "Puthencruz Market",
-    "Subhash Park",
-    "Sacred Heart Basilica",
-    "Thirumala Devaswom Temple",
-    "Shiva Temple Ernakulam",
-    "Gurudwara Sri Guru Singh Sabha",
-    "Ramakrishna Math",
-    "Kadavum Bagam Synagogue",
-    "Hill Palace Tripunithura",
-    "Andhakaranazhi Beach",
-    "Neelimala Viewpoint",
-    "Peechi-Vazhani Wildlife Sanctuary",
-    "Thattekad Bird Sanctuary",
-    "Edappally Church Complex",
-    "Mangaladevi Temple",
-    "Kanjiramattom Mosque",
-    "Thriprayar Temple",
-    "Ernakulam Town Hall",
-    "Regional Science Centre and Planetarium",
-    "Kochi Naval Base",
-    "Vanchikulam Lake",
-    "Palluruthy Beach",
-    "St. Joseph's Church",
-    "Queen's Walkway",
-    "Changampuzha Park",
-    "Indian Naval Maritime Museum",
-    "Jawaharlal Nehru International Stadium",
-    "National Shrine of St. Jude Thaddeus",
-    "Oberon Mall",
-    "Central Square Mall",
-    "Bay Pride Mall",
-    "Gold Souk Grande Mall",
-    "Kundannoor",
-    "Maradu",
-    "Vytilla",
-    "Aluva Metro Station",
-    "Pulinchodu Metro Station",
-    "Companypady Metro Station",
-    "Ambattukavu Metro Station",
-    "Muttom Metro Station",
-    "Kalamassery Metro Station",
-    "Cochin University Metro Station",
-    "Pathadipalam Metro Station",
-    "Edapally Metro Station",
-    "Changampuzha Park Metro Station",
-    "Palarivattom Metro Station",
-    "Jawaharlal Nehru Stadium Metro Station",
-    "Kaloor Metro Station",
-    "Lissie Metro Station",
-    "MG Road Metro Station",
-    "Maharaja's College Metro Station",
-    "Ernakulam South Metro Station",
-    "Kadavanthra Metro Station",
-    "Elamkulam Metro Station",
-    "Vyttila Metro Station",
-    "Thaikoodam Metro Station",
-    "Pettah Metro Station",
-    "SN Junction Metro Station",
-    "Tripunithura Metro Station"
-];
-      
-      function showSuggestions(value) {
-        const suggestions = document.getElementById('suggestions');
-        suggestions.innerHTML = '';
-        if (value.length === 0) {
-          suggestions.style.display = 'none';
-          return;
-        }
-        
-        const filteredLocations = locations.filter(location => location.toLowerCase().includes(value.toLowerCase()));
-        if (filteredLocations.length > 0) {
-          filteredLocations.forEach(location => {
-            const div = document.createElement('div');
-            div.innerHTML = location;
-            div.onclick = () => selectSuggestion(location);
-            suggestions.appendChild(div);
-          });
-          suggestions.style.display = 'block';
-        } else {
-          suggestions.style.display = 'none';
-        }
-      }
-      
-      function selectSuggestion(location) {
-        document.getElementById('inputDelivery').value = location;
-        document.getElementById('suggestions').style.display = 'none';
-      }
-      
-      function redirectToWhatsApp() {
-        var inputValue = encodeURIComponent(document.getElementById("inputDelivery").value);
-
-    var countryCode = "+91"; 
-    var phoneNumber = "9995506030"; 
-
-    var url = "https://api.whatsapp.com/send?phone=" + countryCode + phoneNumber + "&text=";
-
-    var messageBody = "Hello Bismimess, i want you to know your availability in the location : " + inputValue + "!";
-
-    url += messageBody;
-    window.location.href = url;
-      }
-    </script>
-
-
+  
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
@@ -721,7 +529,7 @@
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
     <script src="vendors/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="vendors/fontawesome/all.min.js"></script>
+    <!-- <script src="vendors/fontawesome/all.min.js"></script> -->
     <script src="assets/js/theme.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
