@@ -59,6 +59,7 @@
 .suggestions {
   border: 1px solid #000000;
   border-radius: 15px;
+  color: white;
   max-height: 150px;
   overflow-y: auto;
   position: absolute;
