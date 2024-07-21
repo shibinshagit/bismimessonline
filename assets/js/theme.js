@@ -7,6 +7,27 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ad onn
 
 
@@ -22,6 +43,8 @@ window.addEventListener('load', function() {
 "Fort Kochi",
 "Marine Drive",
 "Mattancherry",
+"Brototype",
+"Nettoor",
 "Lulu Mall",
 "Jew Town",
 "Hill Palace Museum",
@@ -187,7 +210,7 @@ var phoneNumber = "9995506030";
 
 var url = "https://api.whatsapp.com/send?phone=" + countryCode + phoneNumber + "&text=";
 
-var messageBody = "Hello Bismimess, i want you to know your availability in the location : " + inputValue;
+var messageBody = "Hello Bismimess, I would like to know your availability at the location : " + inputValue;
 
 url += messageBody;
 window.location.href = url;
